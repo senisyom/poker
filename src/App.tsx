@@ -1,26 +1,22 @@
+import React from 'react'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import CardDeck from './lib/CardDeck'
+import Card from './components/CardComponent'
 
-const App = () => {
-  const [count, setCount] = useState(0)
 
-  const suitOBJ = {
-    diams: '♦',
-  }
-
-  const cardDeck = new CardDeck()
-  console.log(cardDeck.deck);
-  
-
+ const App: React.FC = () => {
   return (
-    <span className="card rank-k diams">
-    <span className="rank">K</span>
-    <span className="suit">♦</span>
-</span>
-  )
-}
+    <div>
+      <h1>Video Poker</h1>
+      <Card rank="K" suit="diams" />
+      <Card rank="A" suit="hearts" />
+      <Card rank="10" suit="clubs" />
+      <Card rank="7" suit="spades" />
+    </div>
+  );
+};
 
-export default App
+export default App;
+
+

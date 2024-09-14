@@ -20,6 +20,10 @@
   box-shadow: .2em .2em .5em #333;
   vertical-align: top;
 }
+.card {
+  border: 1px solid red;
+}
+
 
 .playingCards a.card {
   text-decoration: none;
@@ -616,3 +620,4 @@
 .playingCards ul.deck li:nth-child(30) { left: 58px; bottom: 29px; }
 .playingCards ul.deck li:nth-child(31) { left: 60px; bottom: 30px; }
 .playingCards ul.deck li:nth-child(32) { left: 62px; bottom: 31px; }
+
