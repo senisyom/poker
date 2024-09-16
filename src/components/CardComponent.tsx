@@ -2,24 +2,24 @@ import React from 'react'
 import '../cards.css'
 
 
-interface CardProps {
+interface Props {
   rank: string;
   suit: string;
 }
 
-  const CardComponent: React.FC<CardProps> = ({ rank, suit }) => {
+  const CardComponent: React.FC<Props> = ({ rank, suit }) => {
   const suitSymbols: { [key: string]: string } = {
-    Diams: '♦',
-    Hearts: '♥',
-    Clubs: '♣',
-    Spades: '♠',
+    diams: '♦',
+    hearts: '♥',
+    clubs: '♣',
+    spades: '♠',
   };
-   const suitSymbol = suitSymbols[suit] || '';
+   const suitCard = suitSymbols[suit];
 
   return (
     <span className={`card rank-${rank} ${suit}`}>
       <span className="rank">{rank}</span>
-      <span className="suit">{suitSymbol}</span>
+      <span className="suit">{suitCard}</span>
     </span>
   );
 };

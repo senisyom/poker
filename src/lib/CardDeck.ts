@@ -8,7 +8,7 @@ class CardDeck {
   }
 
   CreateDeck() {
-    const suits = ["Hearts", "Diamonds", "Clubs", "Spades"];
+    const suits = ["hearts", "diamonds", "clubs", "spades"];
     const ranks = [
       "2",
       "3",
@@ -34,19 +34,18 @@ class CardDeck {
     }
   }
 
+  getCard(): Card | undefined {
+    return this.deck.length > 0?this.deck.splice(Math.floor(Math.random() * this.deck.length), 1)[0]: undefined;
+  }
   getDeck() {
     return this.deck;
   }
 
-  getCard(): Card | undefined {
-    return this.deck.length > 0
-      ? this.deck.splice(Math.floor(Math.random() * this.deck.length), 1)[0]
-      : undefined;
-  }
+  
 
-  getCards(howMany: number): Card[] {
+  getCards(amount: number): Card[] {
     const cards: Card[] = [];
-    for (let i = 0; i < howMany; i++) {
+    for (let i = 0; i < amount; i++) {
       const card = this.getCard();
       if (card) {
         cards.push(card);
