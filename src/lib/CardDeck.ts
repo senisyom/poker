@@ -25,14 +25,41 @@ class CardDeck {
       "A",
     ];
 
+    this.deck = [];
+
     for (const suit of suits) {
       for (const rank of ranks) {
-        this.deck.push(new Card (rank, suit));
+        this.deck.push(new Card(rank, suit));
       }
     }
   }
+
   getDeck() {
     return this.deck;
+  }
+
+  getCard(): Card | undefined {
+    return this.deck.length > 0
+      ? this.deck.splice(Math.floor(Math.random() * this.deck.length), 1)[0]
+      : undefined;
+  }
+
+  getCards(howMany: number): Card[] {
+    const cards: Card[] = [];
+    for (let i = 0; i < howMany; i++) {
+      const card = this.getCard();
+      if (card) {
+        cards.push(card);
+      } else {
+        break;
+      }
+    }
+    return cards;
+  }
+  
+
+  getNewDeck() {
+    this.CreateDeck();
   }
 }
 

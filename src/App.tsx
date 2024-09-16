@@ -2,18 +2,31 @@ import React from 'react'
 import { useState } from 'react'
 import './App.css'
 import CardDeck from './lib/CardDeck'
-import Card from './components/CardComponent'
+import CardComponent from './components/CardComponent'; 
+import Card from './lib/Card'; 
 
+const App: React.FC = () => {
+   
+  const [cards, setCards] = useState <Card[]>([]);
 
- const App: React.FC = () => {
+  const handleDealCard = () => {
+    const deck = new CardDeck()
+    deck.CreateDeck();
+    const deltCards = deck.getCards(5);
+    setCards(deltCards)
+  };
+
   return (
     <div>
-      <h1>Video Poker</h1>
-      <Card rank="K" suit="diams" />
-      <Card rank="A" suit="hearts" />
-      <Card rank="10" suit="clubs" />
-      <Card rank="7" suit="spades" />
-    </div>
+      <button onClick={handleDealCard}>Раздать карты</button>
+      {cards.length > 0 && (
+        <div className="playingCards faceImages">
+          {cards.map((card, index) => (
+            <CardComponent key={index} rank={card.rank} suit={card.suit} />
+          ))}
+        </div>
+      )}
+   </div>
   );
 };
 

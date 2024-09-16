@@ -7,4 +7,3 @@ export default class Card {
         this.suit = suit
     }
 }
-

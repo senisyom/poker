@@ -9,10 +9,10 @@ interface CardProps {
 
   const CardComponent: React.FC<CardProps> = ({ rank, suit }) => {
   const suitSymbols: { [key: string]: string } = {
-    diams: '♦',
-    hearts: '♥',
-    clubs: '♣',
-    spades: '♠',
+    Diams: '♦',
+    Hearts: '♥',
+    Clubs: '♣',
+    Spades: '♠',
   };
    const suitSymbol = suitSymbols[suit] || '';
 
